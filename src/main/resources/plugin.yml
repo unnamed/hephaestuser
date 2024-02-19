@@ -1,0 +1,7 @@
+name: hephaestuser
+main: team.unnamed.hephaestuser.HephaestuserPlugin
+version: ${project.version}
+api-version: 1.20
+softdepend:
+  - creative-central
+  - Citizens
