@@ -11,13 +11,12 @@ java {
 }
 
 repositories {
-    mavenLocal() // hephaestus-engine (dev)
-    maven("https://s01.oss.sonatype.org/content/repositories/snapshots/") // mocha
+    maven("https://s01.oss.sonatype.org/content/repositories/snapshots/") // mocha, hephaestus-engine
     maven("https://papermc.io/repo/repository/maven-public/") // paper-api
     maven("https://maven.citizensnpcs.co/repo") // Citizens
     maven("https://repo.unnamed.team/repository/unnamed-public/") // command-flow
     maven("https://mvn.lumine.io/repository/maven-public/") // MythicMobs
-    mavenCentral() // creative-central, hephaestus-engine
+    mavenCentral() // creative-central
 }
 
 dependencies {
@@ -27,7 +26,7 @@ dependencies {
     implementation("team.unnamed:hephaestus-api:$hephaestusVersion") // hephaestus
     implementation("team.unnamed:hephaestus-reader-blockbench:$hephaestusVersion") // hephaestus
     implementation("team.unnamed:hephaestus-runtime-bukkit-api:$hephaestusVersion") // hephaestus
-    implementation(files("lib/hephaestus-runtime-bukkit-adapt-v1_20_R3-$hephaestusVersion-reobf.jar")) // hephaestus
+    implementation("team.unnamed:hephaestus-runtime-bukkit-adapt-v1_20_R3:$hephaestusVersion:reobf") // hephaestus
     implementation("me.fixeddev:commandflow-universal:0.6.0") // command-flow
     implementation("me.fixeddev:commandflow-bukkit:0.6.0") // command-flow
 

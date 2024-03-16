@@ -49,14 +49,14 @@ public final class ModelAnimateTask implements Runnable {
                     // Moved!
                     if (data.animation == null || !data.animation.name().equals("walk")) {
                         final var walk = view.model().animations().get("walk");
-                        view.animationController().add(walk);
+                        view.animationPlayer().add(walk);
                         data.animation = walk;
                     }
                 } else {
                     // Didn't move
                     if (data.animation == null || !data.animation.name().equals("idle")) {
                         final var idle = view.model().animations().get("idle");
-                        view.animationController().add(idle);
+                        view.animationPlayer().add(idle);
                         data.animation = idle;
                     }
                 }
@@ -67,7 +67,7 @@ public final class ModelAnimateTask implements Runnable {
             // tick the view
             if (base instanceof LivingEntity livingBase){
                 // Use body yaw for living entities
-                view.animationController().tick(livingBase.getBodyYaw(), 0F);
+                view.animationPlayer().tick(livingBase.getBodyYaw(), 0F);
 
                 // Rotate heads too
                 if (viewsWithHeadRotationModifierAlreadyInjected.add(view)) {
@@ -84,7 +84,7 @@ public final class ModelAnimateTask implements Runnable {
                             }));
                 }
             } else {
-                view.animationController().tick(base.getYaw(), 0F);
+                view.animationPlayer().tick(base.getYaw(), 0F);
             }
         }
     }
